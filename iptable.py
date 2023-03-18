@@ -7,10 +7,12 @@ from flask import session
 import base64
 
 app = Flask(__name__)
+app.debug = True
+app.secret_key = 'any'
 
 @app.route("/")
 def hello():
-    if check_user():
+    if chek_user():
         return render_template("index.html")
     else:
         return render_template("connexion.html")
@@ -43,18 +45,42 @@ def alias():
     else:
         return render_template("connexion.html")
 
+@app.route("/connect", methods=['POST'])
+def connexion():
+    res = request.form
+    login = res['login']
+    password = res['passwd']
+    if check_authen(login, passwd):
+        return render_template("index.html")
+    else:
+        return render_template("connexion.html")
+
 '''
 ///////////////
 // Function //
 /////////////
 '''
+def check_authen(login, passwd):
+    passwd = base64.b64encode(passwd.encode())
+    res = in_folder(login, passwd) # Check if this account is in folder , if not return False
+    print(res)
+    if res:
+        print(res)
+        if passwd:
+            session['login'] = login
+            print (session, session['login'])
+            return True
+        else:
+            return False
+    else:
+        return False
 
 ###########################
 ## Check if user in file ##
 ##  Return log + passwd  ##
 ###########################
-def check_authen(login, passwd):
-    with open(log.txt) as temp_f:
+def in_folder(login):
+    with open('log.txt') as temp_f:
         datafile = temp_f.readlines()
     for lines in datafile:
         if login in line:
