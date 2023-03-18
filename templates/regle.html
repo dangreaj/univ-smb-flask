@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title> Site Techno Web </title>
+    <link rel="stylesheet" href= {{ url_for('static', filename='style.css') }}>
+    <script src={{ url_for('static', filename='style.css') }}></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{url_for('start')}}"> Acceuil</a></li>
+                <li> <a href="{{url_for('alias')}}">Alias</a></li>
+                <li> <a href="{{url_for('rules_nat')}}">NAT</a> </li>
+                <li> <a href="{{url_for('rules_nat_add')}}">Ajouter une regle NAT</a> </li>
+            </ul>
+    </nav>
+    <div>
+        <header>
+            Ajout d'une translation d'adresse
+        </header>
+            <form> 
+                <h6> Internal</h6>
+                <p> IP local <input type="text" name="local" placeholder="IP Local"></p>
+                <p> Port source <input type="text" name="local" placeholder="Port source"></p>
+                
+                <h6> External</h6>
+                <p> IP Publique <input type="text" name="local" placeholder="IP Publique"></p>
+                <p> Port source <input type="text" name="local" placeholder="Port source"></p>
+                <input type="submit" name="valider" value="Creer">
+            </form>
+    </div>
+    <footer>
+        <p> &copy dangreaj Techno Web </p>
+    </footer>
+</body>
