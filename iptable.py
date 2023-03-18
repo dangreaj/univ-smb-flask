@@ -1,6 +1,10 @@
 # save this as app.py
 from flask import Flask
 from flask import render_template
+from flask import json
+from flask import request
+from flask import session
+import base64
 
 app = Flask(__name__)
 
@@ -18,7 +22,7 @@ def rules_nat():
 
 @app.route("/rules_nat_add")
 def rules_nat_add():
-    return render_template("regle.html")
+    return render_template("rules_add.html")
 
 @app.route("/alias")
 def alias():
