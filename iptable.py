@@ -10,23 +10,38 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    return render_template("index.html")
+    if check_user():
+        return render_template("index.html")
+    else:
+        return render_template("connexion.html")
 
 @app.route("/start")
 def start():
-    return render_template("index.html")
+    if check_user():
+        return render_template("index.html")
+    else:
+        return render_template("connexion.html")
 
 @app.route("/rules_nat")
 def rules_nat():
-    return render_template("nat.html")
+    if check_user():
+        return render_template("nat.html")
+    else:
+        return render_template("connexion.html")
 
 @app.route("/rules_nat_add")
 def rules_nat_add():
-    return render_template("rules_add.html")
+    if check_user():
+        return render_template("rules_add.html")
+    else:
+        return render_template("connexion.html")
 
 @app.route("/alias")
 def alias():
-    return render_template("alias.html")
+    if check_user():
+        return render_template("alias.html")
+    else:
+        return render_template("connexion.html")
 
 '''
 ///////////////
