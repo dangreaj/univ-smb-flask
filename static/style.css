@@ -1,0 +1,78 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+div
+{
+    margin: 10px;
+    margin-top: 40px;
+    padding: 5px;
+}
+
+nav ul
+{
+    margin-left: 25%;
+    margin-right: 25%;
+    background-color: black;
+    width: 50%;
+    height: 50px;
+    border-radius: 25px;       
+}
+
+nav li
+{
+    padding-left: 20px;
+    display: inline-block;
+    height: 100%;
+    text-align: center;
+    width: 22.605%;
+    line-height: 50px;
+    border-radius: 25px;
+
+    
+}
+
+nav a
+{
+    color: white;
+    text-decoration: none;
+}
+nav li:hover
+{
+    background-color: grey;
+}
+
+footer
+{
+    text-align: center;
+    background-color: rgba(125,125,125,.1);
+}
+
+table
+{
+    border: 2px solid;
+}
+
+td
+{
+    border-bottom: 1px solid;
+    border-right: 1px solid;
+    text-align: center;
+}
+
+.intern
+{
+    border-right: 2px solid;
+}
+
+.ext
+{
+    border-left: 2px solid;
+}
+
+th
+{
+    border-bottom: 2px solid;
+}

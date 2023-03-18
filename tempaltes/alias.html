@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title> Site Techno Web </title>
+    <link rel="stylesheet" href= {{ url_for('static', filename='style.css') }}>
+    <script src={{ url_for('static', filename='style.css') }}></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{url_for('start')}}"> Acceuil</a></li>
+                <li> <a href="{{url_for('alias')}}">Alias</a></li>
+                <li> <a href="{{url_for('rules_nat')}}">NAT</a> </li>
+                <li> <a href="{{url_for('rules_nat_add')}}">Ajouter une regle NAT</a> </li>
+            </ul>
+    </nav>
+    <div>
+        <header> 
+            Alias
+        </header>
+        <table class="tablealias" onclick="alias()">
+            <tr>
+                <th colspan="3"> ?????????????????? </th>
+            </tr>
+            <tr>
+                <td> Nom </td>
+                <td> IP </td>
+                <td> Port </td>
+            </tr>
+            <tr>
+                <td> Serveur1_SSH </td>
+                <td> 10.1.0.10 </td>
+                <td> 22 </td>
+            </tr>
+        </table>
+    </div>
+    
+    <footer>
+        <p> &copy dangreaj Techno Web </p>
+    </footer>
+</body>
