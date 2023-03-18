@@ -1,20 +1,7 @@
-<!DOCTYPE html>
-<head>
-    <meta charset="UTF-8">
-    <title> Site Techno Web </title>
-    <link rel="stylesheet" href= {{ url_for('static', filename='style.css') }}>
-    <script src={{ url_for('static', filename='style.css') }}></script>
-</head>
+{% include 'header.html'}
+
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="{{url_for('start')}}"> Acceuil</a></li>
-                <li> <a href="{{url_for('alias')}}">Alias</a></li>
-                <li> <a href="{{url_for('rules_nat')}}">NAT</a> </li>
-                <li> <a href="{{url_for('rules_nat_add')}}">Ajouter une regle NAT</a> </li>
-            </ul>
-    </nav>
+    {% include nav.html}
     <div>
         <header> 
             Alias
@@ -36,7 +23,5 @@
         </table>
     </div>
     
-    <footer>
-        <p> &copy dangreaj Techno Web </p>
-    </footer>
+    {% include footer.html}
 </body>
