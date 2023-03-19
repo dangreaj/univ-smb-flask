@@ -12,7 +12,7 @@ app.secret_key = 'any'
 
 @app.route("/")
 def hello():
-    if chek_user():
+    if check_user():
         return render_template("index.html")
     else:
         return render_template("connexion.html")
@@ -49,7 +49,7 @@ def alias():
 def connexion():
     res = request.form
     login = res['login']
-    password = res['passwd']
+    passwd = res['passwd']
     if check_authen(login, passwd):
         return render_template("index.html")
     else:
@@ -62,7 +62,7 @@ def connexion():
 '''
 def check_authen(login, passwd):
     passwd = base64.b64encode(passwd.encode())
-    res = in_folder(login, passwd) # Check if this account is in folder , if not return False
+    res = in_folder(login) # Check if this account is in folder , if not return False
     print(res)
     if res:
         print(res)
@@ -83,19 +83,20 @@ def in_folder(login):
     with open('log.txt') as temp_f:
         datafile = temp_f.readlines()
     for lines in datafile:
-        if login in line:
-            return line
+        if login in lines:
+            return lines
     return False
 
 ############################
 ## Check if session exist ##
 ############################
 
-def chek_user():
+def check_user():
     if 'login' in session:
         return True
     else:
         return False
+    
 
 ###########################
 ## Add user if not exist ##
