@@ -19,6 +19,14 @@
                 <td> IP </td>
                 <td> Port source </td>
             </tr>
+            {% for row in nat %}
+            <tr>
+                <td> {{ row.ipint }} </td>
+                <td> {{ row.portint }} </td>
+                <td> {{ row.ipext }} </td>
+                <td> {{ row.portext }} </td>
+            </tr>
+            {% endfor %}
         </table>
     </div>
     {% include 'footer.html' %}

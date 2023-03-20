@@ -27,7 +27,9 @@ def start():
 @app.route("/rules_nat")
 def rules_nat():
     if check_user():
-        return render_template("nat.html")
+        with open("static/nat.json") as nat:
+            data = json.load(nat)
+        return render_template("nat.html", nat=data)
     else:
         return render_template("connexion.html")
 
@@ -41,7 +43,9 @@ def rules_nat_add():
 @app.route("/alias")
 def alias():
     if check_user():
-        return render_template("alias.html")
+        with open("static/alias.json") as alias:
+            data = json.load(alias)
+        return render_template("alias.html", alias=data)
     else:
         return render_template("connexion.html")
 

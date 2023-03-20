@@ -1,0 +1,17 @@
+[
+    {
+        "alias": "Server_1_80",
+        "ip_address": "10.1.1.0",
+        "port": 80
+    },
+    {
+        "alias": "Server_2_2025",
+        "ip_address": "10.2.1.0",
+        "port": 2025
+    },
+    {
+        "alias": "Server_3_1020",
+        "ip_address": "10.4.1.0",
+        "port": 2026
+    }
+]

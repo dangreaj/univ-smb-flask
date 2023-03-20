@@ -27,11 +27,9 @@ nav li
     display: inline-block;
     height: 100%;
     text-align: center;
-    width: 22.605%;
+    width: 22.55%;
     line-height: 50px;
     border-radius: 25px;
-
-    
 }
 
 nav a
@@ -57,19 +55,18 @@ table
 
 td
 {
-    border-bottom: 1px solid;
-    border-right: 1px solid;
+    border: 1px solid;
     text-align: center;
 }
 
 .intern
 {
-    border-right: 2px solid;
+    border: 2px solid;
 }
 
 .ext
 {
-    border-left: 2px solid;
+    border: 2px solid;
 }
 
 th

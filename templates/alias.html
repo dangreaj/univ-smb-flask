@@ -5,20 +5,26 @@
         <header> 
             Alias
         </header>
-        <table class="tablealias" onload="send_request()">
-            <tr>
-                <th colspan="3"> ?????????????????? </th>
-            </tr>
-            <tr>
-                <td> Nom </td>
-                <td> IP </td>
-                <td> Port </td>
-            </tr>
-            <!---<tr>
-                <td> Serveur1_SSH </td>
-                <td> 10.1.0.10 </td>
-                <td> 22 </td>
-            </tr>--->
+        <table class="tablealias">
+            <thead>
+                <tr>
+                    <th colspan="3"> Liste Alias </th>
+                </tr>
+                <tr>
+                    <td> Nom </td>
+                    <td> IP </td>
+                    <td> Port </td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in alias %}
+                <tr>
+                    <td>{{ row.alias }}</td>
+                    <td>{{ row.ip_address }}</td>
+                    <td>{{ row.port }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
         </table>
     </div>
     
