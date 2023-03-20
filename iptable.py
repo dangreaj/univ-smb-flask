@@ -59,6 +59,12 @@ def connexion():
     else:
         return render_template("connexion.html")
 
+@app.route ("/disconnect")
+def disconnect():
+    session.clear()
+    return start()
+
+
 '''
 ///////////////
 // Function //
